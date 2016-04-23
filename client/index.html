@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>pi-home-dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" />
+    <link rel="stylesheet" href="lib/angular-material.min.css" />
+ 
+    <link rel="stylesheet" href="/css/app.css" />
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    <script src="lib/angular-aria.min.js"></script>
+    <script src="lib/angular-material.min.js"></script>
+    <script src="lib/moment.min.js"></script>
+    <script src="lib/fr.min.js"></script>
+    <script src="lib/chart.min.js"></script>
+    <script src="lib/angular-chart.min.js"></script>
+    
+    <!-- build:js app/myapp.min.js -->
+    <script src='/app/app.js'></script>
+    <script src='/app/scripts/home.js'></script>
+    <script src='/app/scripts/weather.js'></script>
+    <script src='/app/scripts/date-time.js'></script>
+    <script src='/app/scripts/travel.js'></script>
+    <script src='/app/scripts/mic.js'></script>
+    <!-- endbuild -->
+  </head>
+  
+  <body>
+    <div layout="column">
+        <div layout="row">
+            <div flex="33">
+                <weather location="48.6373,2.3638" />
+            </div>
+            <div flex="33"></div>
+            <div flex="33" layout="row" layout-align="center center">
+                <date-time />
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

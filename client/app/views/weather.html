@@ -1,0 +1,18 @@
+<div class="weather" layout="row" layout-align="center center" flex="100">
+    <div layout="column" class="weather-current" ng-hide="vm.loading">
+        <div layout="row" layout-align="start stretch">
+            <div flex="50" class="icon" layout="column" layout-align="start center">
+                <i class="wi wi-night-sleet" ng-class="vm.weather.currently.class"></i>
+            </div>
+            <div flex="50" class="temp" layout="column" layout-align="center center">
+                <span class="temp-current">{{vm.weather.currently.temp}}°C</span>
+                <span class="temp-future"></span>
+            </div>
+        </div>
+        <div layout="column" layout-align="start center">
+            <span class="summary">{{vm.weather.currently.summary}}</span>
+            <span class="day-summary">{{vm.weather.day.summary}}</span>
+        </div>
+    </div>
+    <div class="weather-loading" ng-show="vm.loading"></div>
+</div>

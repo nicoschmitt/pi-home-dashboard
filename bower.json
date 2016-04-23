@@ -1,0 +1,38 @@
+{
+  "name": "pi-home-dashboard",
+  "description": "pi-home-dashboard",
+  "authors": [
+    "Nicolas Schmitt"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-material": "^1.0.7",
+    "angular-aria": "^1.5.5",
+    "jquery": "^2.2.3",
+    "moment": "^2.13.0",
+    "Chart.js": "^2.0.1",
+    "angular-chart.js": "1.0.0-alpha4"
+  },
+  "overrides": {
+    "angular-material": {
+      "main": [
+        "angular-material.min.js",
+        "angular-material.min.css"
+      ]
+    },
+    "angular-aria": {
+      "main": "angular-aria.min.js"
+    },
+    "moment": {
+      "main": [ "moment.js", "locale/fr.js" ]
+    }
+  }
+}

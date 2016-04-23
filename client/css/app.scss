@@ -1,0 +1,99 @@
+$black: black;
+$white: #eee;
+
+html, body {
+    background-color: $black;
+    color: $white;
+}
+
+body {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3.400rem;
+    font-weight: 300;
+    line-height: 4rem;
+}
+h2 {
+    font-size: 2.400rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+}
+h3 {
+    font-size: 2.000rem;
+    font-weight: 300;
+    letter-spacing: 0.005em;
+}
+h4 {
+    font-size: 1.600rem;
+    font-weight: 300;
+    letter-spacing: 0.010em;
+    line-height: 2.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.small {
+    font-size: 65%;    
+}
+
+.pointer {
+    cursor: pointer;
+};
+
+// ---- Weather ----
+
+.weather {
+    padding: 10px;
+    
+    .weather-current div {
+        padding: 10px;
+    }
+    
+    .wi {
+        font-size: 6em;
+    }
+    
+    .temp {
+        font-size: 3em;
+    }
+    
+    .summary {
+        font-size: 1.3em;    
+    }
+    
+    .day-summary {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+.date-time {
+    padding: 10px;
+    .div {
+        padding: 10px;
+    }
+    
+    .time {
+        font-size: 5em;
+    }
+    
+    .date {
+        font-size: 1.5em;
+    }
+}
+
+// ----Alert ----
+
+.alert {
+    border: 0;
+    border-radius: 0;
+    
+    &.alert-danger {
+        background-color: #f44336;
+        color: rgba(255,255,255, 0.84);
+    }
+}
