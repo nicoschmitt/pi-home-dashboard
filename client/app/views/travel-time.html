@@ -1,0 +1,20 @@
+<div layout='column' class="routes-list">
+    <div class="route-header">
+        <i class="fa fa-automobile"></i> Travail
+    </div>
+    <ol class="routes">
+        <li class="route-info" ng-repeat="route in vm.routes">
+            <div class="route-name">{{route.name}}</div>
+            <div class="route-stats">
+                <div class="route-length">
+                    <i class="fa fa-road"></i>
+                    <span>{{route.nicedist}}</span>
+                </div>
+                <div class="route-time">
+                    <i class="fa fa-clock-o"></i>
+                    <span>{{route.nicetime}}</span>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

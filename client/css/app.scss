@@ -4,10 +4,11 @@ $white: #eee;
 html, body {
     background-color: $black;
     color: $white;
+    height: unset;
 }
 
 body {
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 h1 {
@@ -148,6 +149,72 @@ a {
 .mic {
     .label {
         font-size: 2em;
+    }
+}
+
+// ---- Travel ---
+
+.routes-list {
+    .route-header {
+        padding-bottom: 15px;
+        text-align: center;
+        font-size: 2em;        
+        border-bottom: 2px solid #e9e9e9;
+    }
+    
+    .routes {
+        overflow: auto;
+        max-height: 300px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        counter-reset: route;
+        
+        li {
+            position: relative;
+            padding: 15px 35px 15px 45px;
+            counter-increment: route;
+            border-bottom: 2px solid $white;
+            
+            &:before {
+                font-weight: bold;
+                font-weight: 700;
+                position: absolute;
+                left: 15px;
+                display: block;
+                width: 20px;
+                height: 20px;
+                content: counter(route);
+                text-align: center;
+                color: black;
+                border-radius: 10px;
+                background-color: $white;
+                font-size: 1em;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.route-info {
+    .route-name {
+        font-size: 1.1em;
+    }
+    
+    .route-time, .route-length {
+        font-size: 0.9em;
+    }
+    
+    .route-stats {
+        margin-top: 5px;
+        
+        .route-length {
+            margin-right: 5px;
+        }
+        
+        .route-length, .route-time {
+            display: inline;
+        }
     }
 }
 

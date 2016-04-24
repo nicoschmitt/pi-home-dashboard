@@ -101,7 +101,6 @@
 
         function link(scope, element) {
             scope.$watch('data', function(data) {
-                console.log(data);
                 if (!data) return;
                 
                 var width = 250, height = 250;
