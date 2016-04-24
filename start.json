@@ -1,6 +1,6 @@
 {
     "apps" : [{
-        "name"      : "piHomeDashboard",
+        "name"      : "pi-home-dashboard",
         "script"    : "server.js",
         "watch"     : true,
         "exec_mode" : "cluster",
