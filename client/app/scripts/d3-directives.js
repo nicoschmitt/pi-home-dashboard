@@ -120,7 +120,7 @@
                                     .attr('transform', "translate(" + (radius + margin.left/2) + ", " + radius + ")");
 
                 var totalPercent = 0.75;
-                for (i = 1; i <= numSections; i++) {
+                for (var i = 1; i <= numSections; i++) {
                     var arcStartRad = percToRad(totalPercent);
                     var arcEndRad = arcStartRad + percToRad(sectionPerc);
                     totalPercent += sectionPerc;
