@@ -1,5 +1,5 @@
 <div class="weather" layout="row" layout-align="center center" flex="100">
-    <div layout="column" class="weather-current" ng-hide="vm.loading">
+    <div layout="column" class="weather-current">
         <div layout="row" layout-align="start stretch">
             <div flex="50" class="icon" layout="column" layout-align="start center">
                 <i class="wi wi-night-sleet" ng-class="vm.weather.currently.class"></i>
@@ -14,5 +14,7 @@
             <span class="day-summary">{{vm.weather.day.summary}}</span>
         </div>
     </div>
-    <div class="weather-loading" ng-show="vm.loading"></div>
+    <div class="graph" flex="100">
+        <d3-line data="vm.tempchart" />
+    </div>
 </div>

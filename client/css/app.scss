@@ -44,13 +44,54 @@ a {
     cursor: pointer;
 };
 
+// ---- Home ---
+
+.mainrow {
+    margin-bottom: 30px;
+}
+
+// ---- Chart ---
+
+.d3-chart-container {
+    width: 100%;
+
+    svg {
+        display: inline-block;
+        
+        .axis {
+            line, text, path {
+                fill: none;
+                stroke: $white;
+                color: $white;
+                font-size: 0.6em;
+                font-weight: 200;
+            }
+        } 
+        
+        .line {
+            fill: none;
+            stroke: $white;
+            stroke-width: 2px;
+        }
+        
+        text {
+            fill: none;
+            color: $white;
+        }
+    }
+}
+
 // ---- Weather ----
 
 .weather {
     padding: 10px;
-    
-    .weather-current div {
-        padding: 10px;
+
+    .weather-current {
+        margin-left: 40px;
+        margin-right: 60px;
+        div {
+            padding: 5px 10px;
+        }
     }
     
     .wi {
@@ -78,11 +119,35 @@ a {
     }
     
     .time {
-        font-size: 5em;
+        font-size: 6em;
     }
     
     .date {
         font-size: 1.5em;
+    }
+}
+
+// ---- MIC
+
+.chart-color1 {
+    fill: #aaa;
+}
+
+.chart-color2 {
+    fill: #ccc;
+}
+
+.chart-color3 {
+    fill: $white;
+}
+
+.needle, .needle-center {
+    fill: #999;
+}
+
+.mic {
+    .label {
+        font-size: 2em;
     }
 }
 

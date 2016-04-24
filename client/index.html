@@ -20,30 +20,22 @@
     <script src="lib/angular-material.min.js"></script>
     <script src="lib/moment.min.js"></script>
     <script src="lib/fr.min.js"></script>
-    <script src="lib/chart.min.js"></script>
-    <script src="lib/angular-chart.min.js"></script>
+    <script src="lib/d3.min.js"></script>
     
     <!-- build:js app/myapp.min.js -->
     <script src='/app/app.js'></script>
+    <script src='/app/scripts/d3-directives.js'></script>
     <script src='/app/scripts/home.js'></script>
     <script src='/app/scripts/weather.js'></script>
     <script src='/app/scripts/date-time.js'></script>
-    <script src='/app/scripts/travel.js'></script>
+    <script src='/app/scripts/travel-time.js'></script>
     <script src='/app/scripts/mic.js'></script>
     <!-- endbuild -->
   </head>
   
   <body>
     <div layout="column">
-        <div layout="row">
-            <div flex="33">
-                <weather location="48.6373,2.3638" />
-            </div>
-            <div flex="33"></div>
-            <div flex="33" layout="row" layout-align="center center">
-                <date-time />
-            </div>
-        </div>
+        <ng-view />
     </div>
   </body>
 </html>

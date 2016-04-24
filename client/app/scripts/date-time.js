@@ -10,10 +10,12 @@
         
         function link(scope, element) {
             scope.time = moment().format("LT");
+            scope.day = moment().format("dddd");
             scope.date = moment().format("LL");
             
             var tick = $interval(function() {
                 scope.time = moment().format("LT");
+                scope.day = moment().format("dddd");
                 scope.date = moment().format("LL");
             }, 2000);
             

@@ -18,8 +18,7 @@
     "angular-aria": "^1.5.5",
     "jquery": "^2.2.3",
     "moment": "^2.13.0",
-    "Chart.js": "^2.0.1",
-    "angular-chart.js": "1.0.0-alpha4"
+    "d3": "^3.5.16"
   },
   "overrides": {
     "angular-material": {
@@ -32,7 +31,10 @@
       "main": "angular-aria.min.js"
     },
     "moment": {
-      "main": [ "moment.js", "locale/fr.js" ]
+      "main": [
+        "moment.js",
+        "locale/fr.js"
+      ]
     }
   }
 }

@@ -10,14 +10,16 @@
         function ($scope, $http, $interval) {
             var vm = this;
             vm.weather = {};
+            vm.tempchart = [];
             
             function update() {
-                console.log("update weather");
                 $http.get("/api/weather/" + $scope.location).then(function(resp) {
                     vm.weather = resp.data;
                     vm.weather.currently.class = getCssClas(vm.weather.currently.icon);
                     vm.weather.day.class = getCssClas(vm.weather.day.icon);
                     vm.weather.week.class = getCssClas(vm.weather.week.icon);
+                    
+                    vm.tempchart = vm.weather.day.data;
                 });
             }
             

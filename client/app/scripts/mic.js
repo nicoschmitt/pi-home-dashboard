@@ -2,26 +2,22 @@
     
     var app = angular.module('myApp');
     
-    function currentQuarter() {
-        var now = moment().month();
-        if (now < 3) return "Q1";
-        if (now < 6) return "Q2";
-        if (now < 6) return "Q3";
-        else return "Q4";
-    }
-    
-    app.controller('micCtrl', ["$scope", "$http", "$interval",
-        function ($scope, $http, $interval) {
+    app.controller('micCtrl', ["$scope", "$http", 
+        function ($scope, $http) {
             var vm = this;
-            
+            $http.get("/api/mic/" + $scope.username).then(function(resp) {
+                vm.quarter = resp.data.quarter;
+                vm.PG1 = resp.data.PG1;
+                vm.PG2 = resp.data.PG2;
+            });
         }
     ]);
   
-    app.directive("travel", function () {
+    app.directive("mic", function () {
         return {
             restrict: 'E',
             scope: {
-                location: "@"  
+                username: "@"  
             },
             templateUrl: "/app/views/mic.html",
             controller: "micCtrl",
