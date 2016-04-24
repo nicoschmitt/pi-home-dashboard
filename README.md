@@ -1,4 +1,4 @@
-# pi- home-dashboard
+# pi-home-dashboard
 
 Web server to display info about time, weather, trafic and other news into a screen at home.
 
