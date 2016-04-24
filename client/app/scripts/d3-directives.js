@@ -76,14 +76,14 @@
             var mkCmd = () => {
                 var thetaRad = percToRad(value / 2);
 
-                topX = - needle.len * Math.cos(thetaRad)
-                topY = - needle.len * Math.sin(thetaRad)
+                var topX = - needle.len * Math.cos(thetaRad)
+                var topY = - needle.len * Math.sin(thetaRad)
 
-                leftX = - needle.rad * Math.cos(thetaRad - Math.PI / 2)
-                leftY = - needle.rad * Math.sin(thetaRad - Math.PI / 2)
+                var leftX = - needle.rad * Math.cos(thetaRad - Math.PI / 2)
+                var leftY = - needle.rad * Math.sin(thetaRad - Math.PI / 2)
 
-                rightX = - needle.rad * Math.cos(thetaRad + Math.PI / 2)
-                rightY = - needle.rad * Math.sin(thetaRad + Math.PI / 2)
+                var rightX = - needle.rad * Math.cos(thetaRad + Math.PI / 2)
+                var rightY = - needle.rad * Math.sin(thetaRad + Math.PI / 2)
 
                 return "M " + leftX + " " + leftY + " L " + topX + " " + topY + " L " + rightX + " " + rightY;
             };
