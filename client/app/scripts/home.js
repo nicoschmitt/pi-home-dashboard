@@ -2,10 +2,10 @@
     
     var app = angular.module('myApp');
   
-    app.controller('homeCtrl', ['$http', "$location",
-        function ($http, $location) {
+    app.controller('homeCtrl', ['$window', 
+        function ($window) {
             var vm = this;
-            
+            vm.debug = $(window).width() + "x" + $(window).height();
         }
     ]);
   

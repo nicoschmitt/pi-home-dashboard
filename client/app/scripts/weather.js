@@ -23,7 +23,7 @@
                 });
             }
             
-            var tick = $interval(update, 5*60*1000); // update every 5 minutes
+            var tick = $interval(update, 10*60*1000); // update every 10 minutes
             $scope.$on("$destroy", () => {
                 if (angular.isDefined(tick)) {
                     $interval.cancel(tick);
