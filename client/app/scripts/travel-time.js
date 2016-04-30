@@ -7,7 +7,8 @@
             vm.routes = [];
             
             function update() {
-                $http.get("/api/travel").then(function(resp) {
+                var qs = "?type=" + $scope.type + "&from=" + $scope.from + "&to=" + $scope.to;
+                $http.get("/api/travel" + qs).then(function(resp) {
                     vm.routes = resp.data;
                     vm.routes.map(elt => {
                         elt.nicedist = (elt.dist / 1000).toFixed(2) + "km";
@@ -38,7 +39,9 @@
         return {
             restrict: 'E',
             scope: {
-                location: "@"  
+                from: "@",
+                to: "@",
+                type: "@"
             },
             templateUrl: "/app/views/travel-time.html",
             controller: "travelCtrl",
