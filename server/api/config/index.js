@@ -1,4 +1,7 @@
 (function(){
+    
+    // BFM : 87328328
+    // St Genevieve : 87545210
 
     var express = require('express');
     var router = express.Router();
@@ -15,6 +18,10 @@
           travelTime: {
               from: "48.64574959999999, 2.32624",
               to: "48.83225631713867, 2.2630059719085693"
+          },
+          rer: {
+              depart: "87545210",
+              arrivee: "87328328"
           }
       });
     };

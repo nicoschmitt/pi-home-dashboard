@@ -97,19 +97,19 @@ a {
     }
     
     .wi {
-        font-size: 6em;
+        font-size: 7em;
     }
     
     .temp {
-        font-size: 3em;
+        font-size: 4em;
     }
     
     .summary {
-        font-size: 1.3em;    
+        font-size: 1.6em;    
     }
     
     .day-summary {
-        font-size: 0.9em;
+        font-size: 1em;
         text-align: center;
     }
 }
@@ -160,6 +160,8 @@ a {
 // ---- Travel ---
 
 .routes-list {
+    padding: 0px 30px;
+    
     .route-header {
         padding-bottom: 15px;
         text-align: center;
@@ -219,6 +221,58 @@ a {
         
         .route-length, .route-time {
             display: inline;
+        }
+    }
+}
+
+// ---- Travel ---
+
+.trains-list {
+    padding: 0px 30px;
+    
+    .train-header {
+        padding-bottom: 15px;
+        text-align: center;
+        font-size: 2em;        
+        border-bottom: 2px solid #e9e9e9;
+    }
+    
+    .trains {
+        overflow: auto;
+        max-height: 300px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        counter-reset: route;
+        
+        li {
+            position: relative;
+            padding: 15px 35px 15px 45px;
+            counter-increment: route;
+            border-bottom: 2px solid $white;
+            
+            &:before {
+                font-weight: bold;
+                font-weight: 700;
+                position: absolute;
+                left: 15px;
+                display: block;
+                width: 20px;
+                height: 20px;
+                content: counter(route);
+                text-align: center;
+                color: black;
+                border-radius: 10px;
+                background-color: $white;
+                font-size: 1em;
+                line-height: 20px;
+            }
+        }
+        
+        .train-info {
+            .train-name {
+                font-size: 1.1em;
+            }
         }
     }
 }

@@ -1,7 +1,10 @@
-<div layout='column' class="trains">
-    <ul>
+<div layout='column' class="trains-list">
+    <div class="train-header">
+        <i class="fa fa-train"></i> Prochains RER
+    </div>
+    <ol class="trains">
         <li class="train-info" ng-repeat="train in vm.trains">
-            {{train.mission}} - {{train.time}} ({{train.retard}})
+            <div class="train-name">{{train.mission}} {{train.nicedate}}</div>
         </li>
-    </ul>
+    </ol>
 </div>

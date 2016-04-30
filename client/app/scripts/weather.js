@@ -14,13 +14,9 @@
             
             function update() {
                 var location = myConfig.weather.location;
-                console.log("weather for " + location);
                 $http.get("/api/weather/" + location).then(function(resp) {
                     vm.weather = resp.data;
                     vm.weather.currently.class = getCssClas(vm.weather.currently.icon);
-                    
-                    console.log(vm.weather);
-                    
                     vm.tempchart = vm.weather.day.data;
                 });
             }
