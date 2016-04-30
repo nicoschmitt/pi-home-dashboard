@@ -8,7 +8,10 @@
         var url = mymic + "/api/data/" + req.params.username + "?key=" + key;
         
         request.get(url, (err, response, body) => {
-             if (err) return res.status(500).send(err);
+             if (err) {
+                 console.log(err);
+                 return res.status(500).send(err);
+             }
              var data = JSON.parse(body);
              
              res.json(data);

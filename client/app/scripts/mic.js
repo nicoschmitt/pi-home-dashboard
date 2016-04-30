@@ -2,8 +2,8 @@
     
     var app = angular.module('myApp');
     
-    app.controller('micCtrl', ["$scope", "$http", 
-        function ($scope, $http) {
+    app.controller('micCtrl', ["$scope", "$http", "$interval",
+        function ($scope, $http, $interval) {
             var vm = this;
             
             function update() {
