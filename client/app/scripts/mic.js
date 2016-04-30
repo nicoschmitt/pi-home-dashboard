@@ -2,12 +2,13 @@
     
     var app = angular.module('myApp');
     
-    app.controller('micCtrl', ["$scope", "$http", "$interval",
-        function ($scope, $http, $interval) {
+    app.controller('micCtrl', ["$scope", "$http", "$interval", "myConfig",
+        function ($scope, $http, $interval, myConfig) {
             var vm = this;
             
             function update() {
-                $http.get("/api/mic/" + $scope.username).then(function(resp) {
+                var username = myConfig.mic.username;
+                $http.get("/api/mic/" + username).then(function(resp) {
                     vm.quarter = resp.data.quarter;
                     vm.PG1 = resp.data.PG1;
                     vm.PG2 = resp.data.PG2;
@@ -29,9 +30,7 @@
     app.directive("mic", function () {
         return {
             restrict: 'E',
-            scope: {
-                username: "@"  
-            },
+            scope: {},
             templateUrl: "/app/views/mic.html",
             controller: "micCtrl",
             controllerAs: "vm"

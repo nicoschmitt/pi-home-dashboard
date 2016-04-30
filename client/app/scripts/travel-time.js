@@ -1,13 +1,15 @@
 (function() {
     var app = angular.module('myApp');
     
-    app.controller('travelCtrl', ["$scope", "$http", "$interval",
-        function ($scope, $http, $interval) {
+    app.controller('travelCtrl', ["$scope", "$http", "$interval", "myConfig",
+        function ($scope, $http, $interval, myConfig) {
             var vm = this;
             vm.routes = [];
             
+            var from = myConfig.travelTime.from;
+            var to = myConfig.travelTime.to;
             function update() {
-                var qs = "?type=" + $scope.type + "&from=" + $scope.from + "&to=" + $scope.to;
+                var qs = "?from=" + from + "&to=" + to;
                 $http.get("/api/travel" + qs).then(function(resp) {
                     vm.routes = resp.data;
                     vm.routes.map(elt => {
@@ -38,11 +40,7 @@
     app.directive("travel", function () {
         return {
             restrict: 'E',
-            scope: {
-                from: "@",
-                to: "@",
-                type: "@"
-            },
+            scope: {},
             templateUrl: "/app/views/travel-time.html",
             controller: "travelCtrl",
             controllerAs: "vm"

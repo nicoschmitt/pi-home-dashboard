@@ -6,18 +6,20 @@
         return "wi-forecast-io-" + icon;
     }
   
-    app.controller('weatherCtrl', ["$scope", "$http", "$interval",
-        function ($scope, $http, $interval) {
+    app.controller('weatherCtrl', ["$scope", "$http", "$interval", "myConfig",
+        function ($scope, $http, $interval, myConfig) {
             var vm = this;
             vm.weather = {};
             vm.tempchart = [];
             
             function update() {
-                $http.get("/api/weather/" + $scope.location).then(function(resp) {
+                var location = myConfig.weather.location;
+                console.log("weather for " + location);
+                $http.get("/api/weather/" + location).then(function(resp) {
                     vm.weather = resp.data;
                     vm.weather.currently.class = getCssClas(vm.weather.currently.icon);
-                    vm.weather.day.class = getCssClas(vm.weather.day.icon);
-                    vm.weather.week.class = getCssClas(vm.weather.week.icon);
+                    
+                    console.log(vm.weather);
                     
                     vm.tempchart = vm.weather.day.data;
                 });
@@ -38,9 +40,7 @@
     app.directive("weather", function () {
         return {
             restrict: 'E',
-            scope: {
-                location: "@"  
-            },
+            scope: {},
             templateUrl: "/app/views/weather.html",
             controller: "weatherCtrl",
             controllerAs: "vm"

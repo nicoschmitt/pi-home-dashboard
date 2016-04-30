@@ -29,9 +29,7 @@
     app.directive("rer", function () {
         return {
             restrict: 'E',
-            scope: {
-                gare: "@"  
-            },
+            scope: {},
             templateUrl: "/app/views/rer.html",
             controller: "rerCtrl",
             controllerAs: "vm"

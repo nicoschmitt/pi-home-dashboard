@@ -6,7 +6,7 @@
         
         function link(scope, element) {
             scope.$watch('data', function(data) {
-                if (data.length == 0) return;
+                if (!data || data.length == 0) return;
                 
                 var width = 400, height = 200;
                 var margin = { top: 10, right: 10, bottom: 20, left: 30 };
