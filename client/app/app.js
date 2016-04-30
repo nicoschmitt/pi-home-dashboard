@@ -19,7 +19,7 @@
         var initInjector = angular.injector(["ng"]);
         var $http = initInjector.get("$http");
         return $http.get("/api/config").then(function(resp){
-            app.constant("env", resp.data.env);
+            app.constant("myConfig", resp.data);
         });
     };
 
