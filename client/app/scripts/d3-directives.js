@@ -72,7 +72,7 @@
         var percToRad = (perc) => { return degToRad(percToDeg(perc)); };
         
         function drawNeedle(svg, value) {
-            var needle = { len: 90, rad: 15 };
+            var needle = { len: 75, rad: 12 };
             var mkCmd = () => {
                 var thetaRad = percToRad(value / 2);
 
@@ -103,7 +103,7 @@
             scope.$watch('data', function(data) {
                 if (!data) return;
                 
-                var width = 250, height = 250;
+                var width = 200, height = 200;
                 var margin = { top: 10, right: 10, bottom: 10, left: 10 };
                 width = width - margin.left - margin.right,
                 height = height - margin.top - margin.bottom;

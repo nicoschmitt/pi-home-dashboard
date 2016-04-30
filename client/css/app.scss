@@ -5,6 +5,7 @@ html, body {
     background-color: $black;
     color: $white;
     height: unset;
+    overflow: hidden;
 }
 
 body {
@@ -148,7 +149,11 @@ a {
 
 .mic {
     .label {
-        font-size: 2em;
+        font-size: 1.2em;
+    }
+    
+    &>div {
+        margin-top: 15px;
     }
 }
 
