@@ -19,7 +19,7 @@
                 var x = d3.time.scale().domain(xValues).range([0, width]);
                 var y = d3.scale.linear().domain(yValues).range([height, 0]);
                 
-                var xAxis = d3.svg.axis().scale(x).orient("bottom");
+                var xAxis = d3.svg.axis().scale(x).orient("bottom").tickFormat(function(d) { return moment(d).format("HH[h]"); });
                 var yAxis = d3.svg.axis().scale(y).orient('left');
 
                 var line = d3.svg.line()
