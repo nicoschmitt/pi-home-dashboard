@@ -18,8 +18,8 @@
             
             uiGmapGoogleMapApiProvider.configure({
                 key: $config.googleKey,
-                v: '3.23', //defaults to latest 3.X anyhow
-                //libraries: 'weather,geometry,visualization'
+                v: '3.23', 
+                libraries: 'places'
             });
     }]);
    

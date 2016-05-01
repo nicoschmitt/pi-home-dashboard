@@ -1,7 +1,6 @@
 require('dotenv').config({silent: true});
 
-var mongo = process.env.MONGO_URI;
-if (!mongo) {
+if (!process.env.INSTANCE) {
     console.log("Missing configuration. Exiting.");
     process.exit();
 }
@@ -13,7 +12,7 @@ var path = require('path');
 var compression = require("compression");
 
 var mongoose = require("mongoose");
-mongoose.connect(mongo);
+mongoose.connect(process.env.MONGO_URI);
 
 var express = require('express');
 var bodyParser = require('body-parser');
