@@ -295,4 +295,16 @@ a {
 
 .config {
     background-color: $white;
+    color: $black;
+    
+    .angular-google-map-container { height: 400px; }
+    .search-input { width: 350px; }
+    
+    .rer, .mic {
+        margin: 0px 30px;
+    }
+    
+    .md-button {
+        margin: 30px 20px;
+    }
 }

@@ -1,13 +1,64 @@
 <div class="config">
+    <script id="searchbox.tpl.html" type="text/ng-template">
+        <input class="search-input" type="text" placeholder="rechercher">
+    </script>
     <md-tabs md-dynamic-height md-border-bottom>
         <md-tab label="weather">
-            
+            <div class="weather" layout="column" layout-margin="10">
+                <h4>Meteo</h4>
+                <div layout="row">
+                    <div flex="50">
+                        <div id="weather-search"></div>
+                        <ui-gmap-google-map center='vm.weather.location' zoom='vm.weather.zoom'>
+                            <ui-gmap-search-box template="vm.weather.searchbox.template" events="vm.weather.searchbox.events" parentdiv="'weather-search'"></ui-gmap-search-box>
+                        </ui-gmap-google-map>
+                        <small>{{vm.weather.location}}</small>
+                    </div>
+                </div>
+            </div>
         </md-tab>
         <md-tab label="trafic">
-            
+            <div class="trafic" layout='row' layout-margin="10">
+                <div flex="50">
+                    <h4>Maison</h4>
+                    <div id="travel-home-search"></div>
+                    <ui-gmap-google-map center='vm.travel.from.location' zoom='vm.travel.from.zoom'>
+                        <ui-gmap-search-box template="vm.travel.from.searchbox.template" events="vm.travel.from.searchbox.events" parentdiv="'travel-home-search'"></ui-gmap-search-box>
+                    </ui-gmap-google-map>
+                    <small>{{vm.travel.from.location}}</small>
+                </div>
+                <div flex="50">
+                    <h4>Boulot</h4>
+                    <div id="travel-work-search"></div>
+                    <ui-gmap-google-map center='vm.travel.to.location' zoom='vm.travel.to.zoom'>
+                        <ui-gmap-search-box template="vm.travel.to.searchbox.template" events="vm.travel.to.searchbox.events" parentdiv="'travel-work-search'"></ui-gmap-search-box>
+                    </ui-gmap-google-map>
+                    <small>{{vm.travel.to.location}}</small>
+                </div>
+            </div>
         </md-tab>
         <md-tab label="rer">
-            
+            <div class="rer">
+                <h4>RER</h4>
+                <md-input-container>
+                    <label>Gare de Départ</label>
+                    <input ng-model="vm.rer.depart">
+                </md-input-container>
+                <md-input-container>
+                    <label>Gare d'Arrivée</label>
+                    <input ng-model="vm.rer.arrivee">
+                </md-input-container>
+            </div>
+        </md-tab>
+        <md-tab label="mic">
+            <div class="mic">
+                <h4>MIC</h4>
+                <md-input-container>
+                    <label>username</label>
+                    <input ng-model="vm.mic.username">
+                </md-input-container>
+            </div>
         </md-tab>
     </md-tabs>
+    <md-button class="md-raised md-primary" ng-click="vm.save()" aria-label="Save">Save</md-button>
 </div>

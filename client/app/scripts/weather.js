@@ -1,5 +1,4 @@
 (function() {
-    
     var app = angular.module('myApp');
     
     function getCssClas(icon) {
@@ -13,8 +12,8 @@
             vm.tempchart = [];
             
             function update() {
-                var location = myConfig.weather.location;
-                $http.get("/api/weather/" + location.long + "," + location.lat).then(function(resp) {
+                var location = myConfig.weather.location.latitude + "," + myConfig.weather.location.longitude;
+                $http.get("/api/weather/" + location).then(function(resp) {
                     vm.weather = resp.data;
                     vm.weather.currently.class = getCssClas(vm.weather.currently.icon);
                     vm.tempchart = vm.weather.day.data;

@@ -6,8 +6,8 @@
             var vm = this;
             vm.routes = [];
             
-            var from = myConfig.travelTime.from.long + "," + myConfig.travelTime.from.lat;
-            var to = myConfig.travelTime.to.long + "," + myConfig.travelTime.to.lat;
+            var from = myConfig.travelTime.from.latitude + "," + myConfig.travelTime.from.longitude;
+            var to = myConfig.travelTime.to.latitude + "," + myConfig.travelTime.to.longitude;
             function update() {
                 var qs = "?from=" + from + "&to=" + to;
                 $http.get("/api/travel" + qs).then(function(resp) {
@@ -25,7 +25,7 @@
                 });
             }
             
-            var tick = $interval(update, 6*60*1000); // update every 6 minutes
+            var tick = $interval(update, 6*60*1000); // update every 4 minutes
             $scope.$on("$destroy", () => {
                 if (angular.isDefined(tick)) {
                     $interval.cancel(tick);
