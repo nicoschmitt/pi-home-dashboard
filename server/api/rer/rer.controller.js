@@ -1,8 +1,9 @@
 (function(){
 
     var request = require("request");
-    var xml2js = require('xml2js');
-    var moment = require('moment');
+    var xml2js  = require('xml2js');
+    var moment  = require('moment');
+    var fs      = require("fs");
     
     module.exports.gettrafic = function(req, res) {
         var ligne = req.params.ligne;
@@ -42,4 +43,7 @@
         });
     }
   
+    module.exports.getgares = function(req, res) {
+        fs.createReadStream('server/api/rer/gares.json', {encoding: "utf-8"}).pipe(res);
+    }
 }());

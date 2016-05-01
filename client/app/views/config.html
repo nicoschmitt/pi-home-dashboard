@@ -38,16 +38,43 @@
             </div>
         </md-tab>
         <md-tab label="rer">
-            <div class="rer">
-                <h4>RER</h4>
-                <md-input-container>
-                    <label>Gare de Départ</label>
-                    <input ng-model="vm.rer.depart">
-                </md-input-container>
-                <md-input-container>
-                    <label>Gare d'Arrivée</label>
-                    <input ng-model="vm.rer.arrivee">
-                </md-input-container>
+            <div class="rer" layout="row">
+                <div flex="50">
+                    <h4>RER</h4>
+                    
+                    <md-autocomplete
+                        md-search-text="searchDepart"
+                        md-selected-item="vm.rer.depart"
+                        md-items="item in vm.searchGare(searchDepart)"
+                        md-item-text="item.nom"
+                        md-min-length="1"
+                        placeholder="gare de départ">
+                        <md-item-template>
+                            <span md-highlight-text="searchDepart">{{item.nom}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            aucune gare correspondante.
+                        </md-not-found>
+                    </md-autocomplete>
+                    
+                    <md-autocomplete
+                        md-search-text="searchArrivee"
+                        md-selected-item="vm.rer.arrivee"
+                        md-items="item in vm.searchGare(searchArrivee)"
+                        md-item-text="item.nom"
+                        md-min-length="1"
+                        placeholder="gare d'arrivée'">
+                        <md-item-template>
+                            <span md-highlight-text="searchArrivee">{{item.nom}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            aucune gare correspondante.
+                        </md-not-found>
+                    </md-autocomplete>
+                    
+                    <span>définissez les gars de départ et d'arrivée (trajet direct uniquement)</span>
+                    
+                </div>
             </div>
         </md-tab>
         <md-tab label="mic">

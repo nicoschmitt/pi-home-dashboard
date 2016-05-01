@@ -6,6 +6,7 @@
     
     router.get("/trafic/:ligne", controller.gettrafic);
     router.get("/trains/:depart/:arrivee", controller.prochaintrains);
+    router.get("/gares", controller.getgares);
 
     module.exports = router;
     
