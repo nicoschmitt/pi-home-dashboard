@@ -6,8 +6,8 @@
             var vm = this;
             vm.routes = [];
             
-            var from = myConfig.travelTime.from;
-            var to = myConfig.travelTime.to;
+            var from = myConfig.travelTime.from.long + "," + myConfig.travelTime.from.lat;
+            var to = myConfig.travelTime.to.long + "," + myConfig.travelTime.to.lat;
             function update() {
                 var qs = "?from=" + from + "&to=" + to;
                 $http.get("/api/travel" + qs).then(function(resp) {

@@ -14,7 +14,7 @@
             
             function update() {
                 var location = myConfig.weather.location;
-                $http.get("/api/weather/" + location).then(function(resp) {
+                $http.get("/api/weather/" + location.long + "," + location.lat).then(function(resp) {
                     vm.weather = resp.data;
                     vm.weather.currently.class = getCssClas(vm.weather.currently.icon);
                     vm.tempchart = vm.weather.day.data;

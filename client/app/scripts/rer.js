@@ -14,7 +14,6 @@
                         t.nicedate = t.date.fromNow();
                         return t; 
                     });
-                    console.log(vm.trains);
                 });
             }
             
