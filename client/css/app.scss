@@ -114,6 +114,8 @@ a {
     }
 }
 
+// ---- date-time ----
+
 .date-time {
     padding: 10px;
     .div {
@@ -131,22 +133,6 @@ a {
 
 // ---- MIC
 
-.chart-color1 {
-    fill: #aaa;
-}
-
-.chart-color2 {
-    fill: #ccc;
-}
-
-.chart-color3 {
-    fill: $white;
-}
-
-.needle, .needle-center {
-    fill: #999;
-}
-
 .mic {
     .label {
         font-size: 1.2em;
@@ -154,6 +140,22 @@ a {
     
     &>div {
         margin-top: 15px;
+    }
+
+    .chart-color1 {
+        fill: #aaa;
+    }
+
+    .chart-color2 {
+        fill: #ccc;
+    }
+
+    .chart-color3 {
+        fill: $white;
+    }
+
+    .needle, .needle-center {
+        fill: #999;
     }
 }
 
@@ -200,27 +202,27 @@ a {
                 line-height: 20px;
             }
         }
-    }
-}
-
-.route-info {
-    .route-name {
-        font-size: 1.1em;
-    }
-    
-    .route-time, .route-length {
-        font-size: 0.9em;
-    }
-    
-    .route-stats {
-        margin-top: 5px;
         
-        .route-length {
-            margin-right: 5px;
-        }
-        
-        .route-length, .route-time {
-            display: inline;
+        .route-info {
+            .route-name {
+                font-size: 1.1em;
+            }
+            
+            .route-time, .route-length {
+                font-size: 0.9em;
+            }
+            
+            .route-stats {
+                margin-top: 5px;
+                
+                .route-length {
+                    margin-right: 5px;
+                }
+                
+                .route-length, .route-time {
+                    display: inline;
+                }
+            }
         }
     }
 }
@@ -287,4 +289,10 @@ a {
         background-color: #f44336;
         color: rgba(255,255,255, 0.84);
     }
+}
+
+// ----Alert ----
+
+.config {
+    background-color: $white;
 }

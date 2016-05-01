@@ -1,15 +1,26 @@
 (function() {
-    var app = angular.module('myApp', [ 'ngRoute', "ngMaterial" ]);
+    var app = angular.module('myApp', [ 'ngRoute', "ngMaterial", 'uiGmapgoogle-maps' ]);
   
-    app.config(['$routeProvider',
-        function ($routeProvider) {
+    app.config(['myConfig', '$routeProvider', 'uiGmapGoogleMapApiProvider', 
+        function ($config, $routeProvider, uiGmapGoogleMapApiProvider) {
 
             $routeProvider.when("/Home", {
                 templateUrl: "/app/views/home.html",
                 controller: "homeCtrl",
                 controllerAs: "vm"
                 
+            }).when("/Config", {
+                templateUrl: "/app/views/config.html",
+                controller: "configCtrl",
+                controllerAs: "vm"
+                
             }).otherwise({ redirectTo: "/Home" });
+            
+            uiGmapGoogleMapApiProvider.configure({
+                key: $config.googleKey,
+                v: '3.23', //defaults to latest 3.X anyhow
+                //libraries: 'weather,geometry,visualization'
+            });
     }]);
    
     fetchData().then(launchApplication);
