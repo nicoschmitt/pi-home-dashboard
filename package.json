@@ -1,6 +1,6 @@
 {
   "name": "pi-home-dashboard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "pi-home-dashboard",
   "main": "server.js",
   "author": "Nicolas Schmitt",
@@ -30,8 +30,8 @@
     "gulp-usemin": "^0.3.22",
     "gulp-util": "^3.0.7",
     "moment": "^2.13.0",
-    "mongodb": "^2.1.16",
-    "mongoose": "^4.4.12",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.4.14",
     "querystring": "^0.2.0",
     "request": "^2.72.0",
     "sendgrid": "^2.0.0",
