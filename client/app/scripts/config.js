@@ -49,10 +49,7 @@
             
             vm.mic = $config.mic;
             
-            vm.rer = { 
-                depart: "",
-                arrivee: ""
-            };
+            vm.rer = { depart: "", arrivee: "" };
             vm.gares = [];
             
             $http.get("/api/rer/gares").then(function(resp) {

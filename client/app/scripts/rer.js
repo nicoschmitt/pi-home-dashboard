@@ -13,6 +13,7 @@
                         vm.trains = resp.data.map(t => { 
                             t.date = moment(t.date);
                             t.nicedate = t.date.fromNow();
+                            t.exact = t.date.format("LT");
                             return t; 
                         });
                     });

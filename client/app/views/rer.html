@@ -3,8 +3,10 @@
         <i class="fa fa-train"></i> Prochains RER
     </div>
     <ol class="trains">
-        <li class="train-info" ng-repeat="train in vm.trains">
-            <div class="train-name">{{train.mission}} {{train.nicedate}}</div>
+        <li class="train-info" ng-repeat="train in vm.trains" layout="row">
+            <div flex="50" class="train-name">{{train.mission}} {{train.nicedate}}</div>
+            <div flex="40"></div>
+            <div flex="10" layout=" end">{{train.exact}}</div>
         </li>
     </ol>
 </div>
