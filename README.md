@@ -10,3 +10,7 @@ gulp prod
 ## Start with pm2 (using cluster)
 
 pm2 start start.json
+
+## Update
+
+git checkout client/index.html && git pull && gulp prod && pm2 reload dashboard
