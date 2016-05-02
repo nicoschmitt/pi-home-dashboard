@@ -7,5 +7,4 @@
     router.get("/:username", controller.getdata);
 
     module.exports = router;
-    
 }());

@@ -1,5 +1,4 @@
 (function(){
-    
     var register = function(app) {
         app.use("/api*", function(req, res, next) {
             res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
@@ -16,5 +15,4 @@
     };
 
     module.exports.register = register;
-
 }());

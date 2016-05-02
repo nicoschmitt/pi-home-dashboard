@@ -9,5 +9,4 @@
     router.get("/gares", controller.getgares);
 
     module.exports = router;
-    
 }());

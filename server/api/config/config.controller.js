@@ -10,8 +10,8 @@
             googleKey: process.env.GOOGLE_KEY,
             weather: {
                 location: {
-                    latitude: 48.856614, //48.6457496,
-                    longitude: 2.35222 //2.32624
+                    latitude: 48.856614, 
+                    longitude: 2.35222
                 }
             },
             mic: {
@@ -19,8 +19,8 @@
             },
             travelTime: {
                 from: {
-                    latitude: 48.856614, //48.6457496,
-                    longitude: 2.35222 //2.32624
+                    latitude: 48.856614,
+                    longitude: 2.35222
                 },
                 to: {
                     latitude: 48.832256, 
@@ -35,7 +35,6 @@
     }
 
     module.exports.getconfig = function(req, res) {
-        
         Config.findOne({ instance: process.env.INSTANCE }, { __v: 0, _id: 0 }).lean().exec(function(err, doc) {
             if (err) return res.status(500).send(err);
             
@@ -47,8 +46,6 @@
     };
   
     module.exports.updateconfig = function(req, res) {
-        console.log(req.body);
-        
         var config = {
             weather: req.body.weather,
             travelTime: req.body.travelTime,
@@ -62,5 +59,4 @@
             res.json({}); 
         });
     };
-  
 }());

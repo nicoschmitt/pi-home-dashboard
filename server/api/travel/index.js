@@ -7,5 +7,4 @@
     router.get("/", controller.gettravel);
 
     module.exports = router;
-    
 }());
