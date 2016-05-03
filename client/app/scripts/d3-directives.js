@@ -113,9 +113,8 @@
                 d3.select(element[0]).selectAll("*").remove();
                 var chart = d3.select(element[0]).append("div").attr("class", "d3-chart-container");
                 var svg = chart.append("svg")
-                                    .attr("style", "margin-bottom: -" + height/2)
                                     .attr("width", width + margin.left + margin.right)
-                                    .attr("height", height + margin.top + margin.bottom)
+                                    .attr("height", height/2 + margin.top + margin.bottom)
                                 .append("g")
                                     .attr('transform', "translate(" + (radius + margin.left/2) + ", " + radius + ")");
 
