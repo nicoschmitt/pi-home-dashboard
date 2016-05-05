@@ -15,3 +15,5 @@ pm2 start start.json
 ## Update
 
 git checkout client/index.html && git pull && gulp prod && pm2 reload dashboard
+
+Exemple of refreshing Chromium through ssh: DISPLAY=":0" sudo -u kiosk xdotool getactivewindow key F5
