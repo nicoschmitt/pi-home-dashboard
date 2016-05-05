@@ -14,12 +14,13 @@
     "angular": "^1.5.5",
     "angular-animate": "^1.5.5",
     "angular-route": "^1.5.5",
-    "angular-material": "^1.0.7",
+    "angular-material": "^1.0.8",
     "angular-aria": "^1.5.5",
     "jquery": "^2.2.3",
     "moment": "^2.13.0",
-    "d3": "^3.5.16",
-    "angular-google-maps": "^2.3.2"
+    "d3": "^3.5.17",
+    "angular-google-maps": "^2.3.2",
+    "moment-ferie-fr": "*"
   },
   "overrides": {
     "angular-material": {
