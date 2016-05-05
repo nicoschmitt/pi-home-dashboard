@@ -1,9 +1,9 @@
 <div layout="column">
     <div class="mainrow" layout="row">
-        <div flex="66">
+        <div flex="75">
             <weather />
         </div>
-        <div flex="33" layout="row" layout-align="center center">
+        <div flex="25" layout="row" layout-align="center center">
             <date-time />
         </div>
     </div>
@@ -15,7 +15,7 @@
             <rer />
         </div>
         <div flex="35">
-            <travel ng-show="vm.isWorkingDay" />
+            <travel ng-if="vm.isWorkingDay" />
         </div>
     </div>
 </div>
