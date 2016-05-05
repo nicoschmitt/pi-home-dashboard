@@ -11,7 +11,7 @@
              if (err) return res.status(500).send(err);
              var data = JSON.parse(body);
              
-             var nextHours = data.hourly.data.slice(0, 10).map(elt => { return { time: elt.time * 1000, temp: elt.temperature } });
+             var nextHours = data.hourly.data.slice(0, 12).map(elt => { return { time: elt.time * 1000, temp: elt.temperature } });
              
              res.json({
                  currently: {
