@@ -1,6 +1,7 @@
 # pi-home-dashboard
 
-Web server to display info about time, weather, trafic and other news into a screen at home.
+Web server to display info about time, weather, trafic and other news into a screen at home.  
+Tested on Windows (dev) and Raspbian Jessy (using pm2 and behind nginx).  
 
 ## Install
 

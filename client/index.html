@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>pi-home-dashboard</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -39,9 +39,9 @@
     <!-- endbuild -->
   </head>
   
-  <body>
-    <div layout="column">
-        <ng-view />
+  <body layout="column" layout-align="center stretch">
+    <div layout="column" flex="100">
+        <ng-view layout="column" flex="100" />
     </div>
   </body>
 </html>

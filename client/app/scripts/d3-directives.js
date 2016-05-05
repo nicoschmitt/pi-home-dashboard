@@ -19,9 +19,12 @@
                 var x = d3.time.scale().domain(xValues).range([0, width]);
                 var y = d3.scale.linear().domain(yValues).range([height, 0]);
                 
-                var xAxis = d3.svg.axis().scale(x).orient("bottom").tickFormat(function(d) { return moment(d).format("HH[h]"); });
-                var yAxis = d3.svg.axis().scale(y).orient('left');
-
+                var xAxis = d3.svg.axis().scale(x).orient("bottom")
+                        .ticks(d3.time.hours, 2)
+                        .tickFormat(function(d) { return moment(d).format("HH[h]"); });
+                        
+                var yAxis = d3.svg.axis().scale(y).orient('left').ticks(5);
+                
                 var line = d3.svg.line()
                             .x(function(d) { return x(new Date(d.time)) })
                             .y(function(d) { return y(d.temp) });

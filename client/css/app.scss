@@ -4,7 +4,7 @@ $white: #eee;
 html, body {
     background-color: $black;
     color: $white;
-    height: unset;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ a {
                 fill: none;
                 stroke: $white;
                 color: $white;
-                font-size: 0.6em;
+                font-size: 1em;
                 font-weight: 200;
             }
         } 
