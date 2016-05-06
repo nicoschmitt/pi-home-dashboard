@@ -17,7 +17,7 @@
                 var yValues = d3.extent(data, function(d,i) { return d.temp });
                                 
                 var x = d3.time.scale().domain(xValues).range([0, width]);
-                var y = d3.scale.linear().domain(yValues).range([height, 0]);
+                var y = d3.scale.linear().domain(yValues).range([height, 0]).nice();
                 
                 var xAxis = d3.svg.axis().scale(x).orient("bottom")
                         .ticks(d3.time.hours, 2)
