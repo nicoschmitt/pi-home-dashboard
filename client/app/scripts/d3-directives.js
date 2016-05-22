@@ -9,7 +9,7 @@
                 if (!data || data.length == 0) return;
                 
                 var width = 400, height = 200;
-                var margin = { top: 10, right: 10, bottom: 20, left: 30 };
+                var margin = { top: 10, right: 15, bottom: 20, left: 40 };
                 width = width - margin.left - margin.right,
                 height = height - margin.top - margin.bottom;
                 
