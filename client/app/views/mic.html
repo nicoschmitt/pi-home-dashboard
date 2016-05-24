@@ -1,4 +1,7 @@
-<div class="mic" layout="column">
+<div class="info" ng-hide="vm.init" layout="column" layout-align="center center">
+    <span>loading...</span>
+</div>
+<div class="mic" layout="column" ng-show="vm.init">
     <div class="pg1" layout="column" layout-align="start center">
         <d3-gauge data="vm.PG1" />
         <span class="label">PG1: {{vm.PG1}}%</span>

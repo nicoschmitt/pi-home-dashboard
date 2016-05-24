@@ -5,11 +5,13 @@
     app.controller('micCtrl', ["$scope", "$http", "$interval", "myConfig",
         function ($scope, $http, $interval, myConfig) {
             var vm = this;
+            vm.init = false;
             
             function update() {
                 var username = myConfig.mic.username;
                 if (username) {
                     $http.get("/api/mic/" + username).then(function(resp) {
+                        vm.init = true;
                         vm.quarter = resp.data.quarter;
                         vm.PG1 = resp.data.PG1;
                         vm.PG2 = resp.data.PG2;
