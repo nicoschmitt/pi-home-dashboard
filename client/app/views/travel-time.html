@@ -1,6 +1,7 @@
 <div layout='column' class="routes-list">
     <div class="route-header">
         <i class="fa fa-automobile"></i> Travail
+        <i class="fa fa-exclamation-triangle fa-inverse" aria-hidden="true" ng-show="vm.warning"></i>
     </div>
     <ol class="routes">
         <li class="route-info" ng-repeat="route in vm.routes">
