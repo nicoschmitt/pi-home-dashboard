@@ -16,7 +16,7 @@
             }
             
             function update() {
-                vm.isWorkingDay = moment().startOf('day').isWorkingDay();
+                vm.isWorkingDay = true; //moment().startOf('day').isWorkingDay();
             }
             
             var tick = $interval(update, 3*60*60*1000); // update every 3 hours

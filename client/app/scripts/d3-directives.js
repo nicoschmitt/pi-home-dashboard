@@ -16,16 +16,16 @@
                 var xValues = d3.extent(data, function(d,i) { return new Date(d.time); });
                 var yValues = d3.extent(data, function(d,i) { return d.temp });
                                 
-                var x = d3.time.scale().domain(xValues).range([0, width]);
-                var y = d3.scale.linear().domain(yValues).range([height, 0]).nice();
+                var x = d3.scaleTime().domain(xValues).range([0, width]);
+                var y = d3.scaleLinear().domain(yValues).range([height, 0]).nice();
                 
-                var xAxis = d3.svg.axis().scale(x).orient("bottom")
-                        .ticks(d3.time.hours, 2)
-                        .tickFormat(function(d) { return moment(d).format("HH[h]"); });
+                var xAxis = d3.axisBottom(x)
+                         .ticks(d3.timeHour.every(2))
+                         .tickFormat(function(d) { return moment(d).format("HH[h]"); });
                         
-                var yAxis = d3.svg.axis().scale(y).orient('left').ticks(5);
+                var yAxis = d3.axisLeft(y).ticks(5);
                 
-                var line = d3.svg.line()
+                var line = d3.line()
                             .x(function(d) { return x(new Date(d.time)) })
                             .y(function(d) { return y(d.temp) });
                 
@@ -128,7 +128,7 @@
                     totalPercent += sectionPerc;
                     var startPadRad = i == 1 ? 0 : padRad / 2;
                     var endPadRad = i == numSections ? 0 : padRad / 2;
-                    var arc = d3.svg.arc()
+                    var arc = d3.arc()
                                 .outerRadius(radius - chartInset)
                                 .innerRadius(radius - chartInset - barWidth)
                                 .startAngle(arcStartRad + startPadRad)

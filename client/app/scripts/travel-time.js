@@ -6,6 +6,8 @@
             var vm = this;
             vm.warning = false;
             vm.routes = [];
+            var previous = 0;
+            vm.tendance = "";
             
             var from = myConfig.travelTime.from.latitude + "," + myConfig.travelTime.from.longitude;
             var to = myConfig.travelTime.to.latitude + "," + myConfig.travelTime.to.longitude;
@@ -24,6 +26,22 @@
                         elt.nicetime += duration.minutes() + " min";
                         return elt;
                     });
+                    if (vm.routes && vm.routes.length > 0) {
+                        var time = vm.routes[0].time;
+                        if (previous != 0) {
+                            if (previous - time > 60) {
+                                // time going down
+                                vm.tendance = "down";
+                            } else if (previous - time < 60) {
+                                // time going up
+                                vm.tendance = "up";
+                            } else {
+                                // same time
+                                vm.tendance = "";
+                            }
+                        }
+                        previous = time;
+                    }
                 }, function(resp) {
                     // error
                     console.log("error loading travel time data");

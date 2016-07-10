@@ -15,8 +15,6 @@
         else quarter = "Q2";
 
         var url = mymic + "/" + req.params.username + "?quarter=" + quarter + "&key=" + key;
-        console.log(url);
-        
         request.get(url, (err, response, body) => {
              if (err) {
                  console.log(err);

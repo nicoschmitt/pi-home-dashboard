@@ -2,6 +2,7 @@
     <div class="route-header">
         <i class="fa fa-automobile"></i> Travail
         <i class="fa fa-exclamation-triangle fa-inverse" aria-hidden="true" ng-show="vm.warning"></i>
+        <i ng-if='vm.tendance' ng-class="['fa', 'fa-sort-' + vm.tendance ]" aria-hidden="true"></i>
     </div>
     <ol class="routes">
         <li class="route-info" ng-repeat="route in vm.routes">
