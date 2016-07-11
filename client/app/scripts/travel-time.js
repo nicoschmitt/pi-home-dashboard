@@ -29,10 +29,10 @@
                     if (vm.routes && vm.routes.length > 0) {
                         var time = vm.routes[0].time;
                         if (previous != 0) {
-                            if (previous - time > 60) {
+                            if (previous - time >= 60) {
                                 // time going down
                                 vm.tendance = "down";
-                            } else if (previous - time < 60) {
+                            } else if (previous - time <= -60) {
                                 // time going up
                                 vm.tendance = "up";
                             } else {
