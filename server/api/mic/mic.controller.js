@@ -19,6 +19,9 @@
              if (err) {
                  console.log(err);
                  return res.status(500).send(err);
+             } else if (response.statusCode != 200) {
+                 console.log(body);
+                 return res.status(500).send(body);
              }
              var data = JSON.parse(body);
              

@@ -1,6 +1,6 @@
 {
   "name": "pi-home-dashboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dashboard",
   "main": "server.js",
   "author": "Nicolas Schmitt",
