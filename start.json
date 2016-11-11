@@ -4,7 +4,7 @@
         "script"    : "server.js",
         "watch"     : true,
         "exec_mode" : "cluster",
-        "instances" : "max",
+        "instances" : "1",
         "env": {
             "NODE_ENV": "production",
             "PORT": 8081
