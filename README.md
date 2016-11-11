@@ -5,11 +5,15 @@ Tested on Windows (dev) and Raspbian Jessy (using pm2 and behind nginx).
 
 ## Install
 
-npm i
+sudo npm i -g gulp  
+git clone https://github.com/nicoschmitt/pi-home-dashboard.git  
+cd pi-home-dashboard  
+npm i  
 gulp prod
 
 ## Start with pm2 (using cluster)
 
+sudo npm i -g pm2  
 pm2 start start.json
 
 ## Update
