@@ -11,7 +11,7 @@
                     var url = "/api/rer/trains/" + $config.rer.depart + "/" + $config.rer.arrivee;
                     $http.get(url).then(function(resp) {
                         vm.trains = resp.data.map(t => { 
-                            t.date = moment(t.date);
+                            t.date = moment.utc(t.date);
                             t.nicedate = t.date.fromNow();
                             t.exact = t.date.format("LT");
                             return t; 

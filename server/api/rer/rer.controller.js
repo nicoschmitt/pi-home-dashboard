@@ -31,7 +31,7 @@
             var data = xml2js.parseString(body, { mergeAttrs: true }, function(err, result) {
                 if (result.passages && result.passages.train) {
                     data = result.passages.train.slice(0, 5).map(t => {
-                        var date = moment(t.date[0]["_"], "DD/MM/YYYY HH:mm");
+                        var date = moment.utc(t.date[0]["_"], "DD/MM/YYYY HH:mm");
                         return { mission: t.miss[0], date: date };
                     });
                     res.json(data);
