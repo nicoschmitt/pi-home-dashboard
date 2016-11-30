@@ -1,11 +1,11 @@
 {
   "name": "pi-home-dashboard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "dashboard",
   "main": "server.js",
   "author": "Nicolas Schmitt",
   "engines": {
-    "node": "6.2.2"
+    "node": "6.9.1"
   },
   "scripts": {
     "heroku-postbuild": "gulp prod"
@@ -31,7 +31,7 @@
     "gulp-util": "^3.0.7",
     "lodash": "^4.17.2",
     "moment": "^2.17.0",
-    "mongodb": "^2.2.11",
+    "mongodb": "^2.2.12",
     "mongoose": "^4.7.0",
     "node-sass": "^3.13.0",
     "querystring": "^0.2.0",
